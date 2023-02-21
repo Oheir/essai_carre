@@ -1,7 +1,7 @@
 <template>
   <input v-model="a">
   <input v-model="b">
-  <p>{{pgdcx[0]}}</p>
+  <p>{{pgdcx}}</p>
   <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <g fill="black"
   x="10">
@@ -44,8 +44,11 @@ export default {
       for (let i=0; i < n; i++){
         if (a > b){
           pgdcs.push((100/a)*b)
+           b = a - b
         }
-        
+        else {
+          a = b
+        }
       }
       return pgdcs
     },
